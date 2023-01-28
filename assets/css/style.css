@@ -1,0 +1,15 @@
+.header {
+    display: flex;
+    justify-content: center;
+    background-color: blue;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 3px solid black;
+    border-radius: 90px;
+}
+

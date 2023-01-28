@@ -5,11 +5,65 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Storm Central Weather Page</title>
 </head>
 
 <body>
+    <header id="header" class="header">
+        <h1>Weather App</h1>
+    </header>
+    <div class="container">
+
+        <aside class="cities left half">
+            <article class="searchBar">
+                <h2>Search for a city:</h2>
+                <form>
+                    <div class="form">
+                        <input list="cities" class="form-control" id="cities">
+                    </div>
+                    <button type="submit" class="location btn" id="search-btn">Search</button>
+                </form>
+            </article>
+            <article class="recentSearches">
+                <h3>Recent Searches</h3>
+            </article>
+        </aside>
+        <section class="data right half">
+            <article class="currentForecast">
+                <h2>Current Forecast</h2>
+                <ul>
+                    <li>City Name</li>
+                    <li>Date</li>
+                    <li>Icon</li>
+                    <li>temperature</li>
+                    <li>humidty</li>
+                    <li>wind speed</li>
+                </ul>
+
+            </article>
+            <article class="fiveDay">
+                <h3>5 Day Forecast</h3>
+                <ul>
+                    <li>Date</li>
+                    <li>Icon</li>
+                    <li>temperature</li>
+                    <li>humidty</li>
+                    <li>wind speed</li>
+                </ul>
+            </article>
+        </section>
+
+    </div>
+
 
 </body>
 
+<script src="./assets/js/script.js"></script>
+
 </html>
+
+<!-- WHEN I view current weather conditions for that city
+THEN I am presented with the city name, the date, an icon 
+representation of weather conditions, the temperature, 
+the humidity, and the the wind speed -->
