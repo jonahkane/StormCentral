@@ -5,104 +5,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Storm Central Weather Page</title>
+    <title>Submit This One</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
+<body onload="DefaultView()">
+
     <header id="header" class="header">
-        <h1>Weather App</h1>
+        <h1>Weather Dashboard</h1>
     </header>
     <div class="container">
+        <div class="left-side">
 
-        <aside class="cities left half">
-            <article class="searchBar">
-                <h2>Search for a city:</h2>
-                <form>
-                    <div class="form">
-                        <input list="cities" class="form-control" id="cities">
-                    </div>
-                    <button type="submit" class="location btn" id="search-btn">Search</button>
-                </form>
-            </article>
-            <article class="recentSearches">
-                <h3>Recent Searches</h3>
-            </article>
-        </aside>
-        <section class="data right half">
-            <article class="currentForecast">
-                <h2 id="forecast-info">Search for a city to see the forecast!</h2>
-                <h2 id="current-date"></h2>
-                <h2 id="location"></h2>
-                <h3 class="icon-description">
-                    <p id="description">Weather Conditions</p>
+            <h1>Search for a city's weather</h1>
+            <form id="city-form" method="get">
+                <label for="city-input">Enter a city below</label><br>
+                <input type="text" placeholder="Default search: Minneapolis" name="city-list" id="city-text">
+            </form>
+            <button type="submit" class="location btn" id="search-btn">Search For Weather Data</button>
+            <p>City Count: <span id="city-count">0</span></p>
+            <ul id="city-list"></ul>
+
+
+
+        </div>
+
+
+        <div class="weather-details right-side">
+            <section class="current-weather top">
+                <div class="main-forecast">
+                    <h2 id="location"></h2>
+                    <h2 id="current-date"></h2>
                     <img src="" class="icon">
-                </h3>
-                <ul>
-                    <!-- <li id="location">City Name</li> -->
-                    <!-- <li id="currentDate">Date</li> -->
-                    <li id="temp">temperature</li>
-                    <li id="humidity">humidty</li>
-                    <li id="wind">wind speed</li>
-                </ul>
-
-            </article>
-            <article class="fiveDay">
-                <h3>5 Day Forecast</h3>
-                <!-- 
-                <div class="card" id="card1">
-                    <ul>
-                        <li id="day1">1 Day From Today</li>
-                        <li>Description & Icon</li>
-                        <li>temperature</li>
-                        <li>humidty</li>
-                        <li>wind speed</li>
-                    </ul>
+                    <h2 id="weather-conditions"></h2>
                 </div>
-                <div class="card" id="card2">
-                    <ul>
-                        <li id="day2">2 Days From Today</li>
-                        <li>Description & Icon</li>
-                        <li>temperature</li>
-                        <li>humidty</li>
-                        <li>wind speed</li>
-                    </ul>
+                <h3 id="temperature"></h3>
+                <h3 id="humidity"></h3>
+                <h3 id="wind-speed"> </h3>
+            </section>
+
+            <section class="five-day bottom">
+                <div>
+                    <h3>5 Day Forecast</h3>
                 </div>
+                <div>
+                    <article class="card-container">
+                        <section class="card">
+                            <p class="weather" id="day1"></p>
+                            <div class="image"><img src="" class="imgClass" id="img8"></div>
+                            <p class="Description" id="day8Description"></p>
+                            <p class="TempValues" id="day8Temp"></p>
+                            <p class="HumValues" id="day8Hum"></p>
+                            <p class="WindSpeed" id="day8Wind"></p>
+                        </section>
+                        <section class="card">
+                            <p class="weather" id="day2"></p>
+                            <div class="image"><img src="" class="imgClass" id="img16"></div>
+                            <p class="Description" id="day16Description"></p>
+                            <p class="TempValues" id="day16Temp"></p>
+                            <p class="HumValues" id="day16Hum"></p>
+                            <p class="WindSpeed" id="day16Wind"></p>
 
-                <div class="card" id="card3">
-                    <ul>
-                        <li id="day3">3 Days From Today</li>
-                        <li>Description & Icon</li>
-                        <li>temperature</li>
-                        <li>humidty</li>
-                        <li>wind speed</li>
-                    </ul>
+                        </section>
+                        <section class="card">
+                            <p class="weather" id="day3"></p>
+                            <div class="image"><img src="" class="imgClass" id="img24"></div>
+                            <p class="Description" id="day24Description"></p>
+                            <p class="TempValues" id="day24Temp"></p>
+                            <p class="HumValues" id="day24Hum"></p>
+                            <p class="WindSpeed" id="day24Wind"></p>
+
+                        </section>
+                        <section class="card">
+                            <p class="weather" id="day4"></p>
+                            <div class="image"><img src="" class="imgClass" id="img32"></div>
+                            <p class="Description" id="day32Description"></p>
+                            <p class="TempValues" id="day32Temp"></p>
+                            <p class="HumValues" id="day32Hum"></p>
+                            <p class="WindSpeed" id="day32Wind"></p>
+
+                        </section>
+                        <section class="card">
+                            <p class="weather" id="day5"></p>
+                            <div class="image"><img src="" class="imgClass" id="img40"></div>
+                            <p class="Description" id="day40Description"></p>
+                            <p class="TempValues" id="day40Temp"></p>
+                            <p class="HumValues" id="day40Hum"></p>
+                            <p class="WindSpeed" id="day40Wind"></p>
+
+                        </section>
                 </div>
+                </article>
 
-                <div class="card" id="card4">
-                    <ul>
-                        <li id="day4">4 Days From Today</li>
-                        <li>Description & Icon</li>
-                        <li>temperature</li>
-                        <li>humidty</li>
-                        <li>wind speed</li>
-                    </ul>
-                </div>
 
-                <div class="card" id="card5">
-                    <ul>
-                        <li id="day5">5 Days From Today</li>
-                        <li>Description & Icon</li>
-                        <li>temperature</li>
-                        <li>humidty</li>
-                        <li>wind speed</li>
-                    </ul>
-                </div> -->
 
-            </article>
-        </section>
+
+            </section>
+        </div>
 
     </div>
 
@@ -111,15 +110,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"></script>
+<script src="./script.js"></script>
 
-<script src="./assets/js/script.js"></script>
 
+</body>
 
 </html>
-
-<!-- WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon 
-representation of weather conditions, the temperature, 
-the humidity, and the the wind speed -->
-
-<!-- http://openweathermap.org/img/wn/10d@2x.png -->
