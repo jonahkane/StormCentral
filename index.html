@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Storm Central Weather Page</title>
 </head>
@@ -31,35 +33,86 @@
         </aside>
         <section class="data right half">
             <article class="currentForecast">
-                <h2>Current Forecast</h2>
+                <h2 id="forecast-info">Search for a city to see the forecast!</h2>
+                <h2 id="current-date"></h2>
+                <h2 id="location"></h2>
+                <h3 class="icon-description">
+                    <p id="description">Weather Conditions</p>
+                    <img src="" class="icon">
+                </h3>
                 <ul>
-                    <li>City Name</li>
-                    <li>Date</li>
-                    <li>Icon</li>
-                    <li>temperature</li>
-                    <li>humidty</li>
-                    <li>wind speed</li>
+                    <!-- <li id="location">City Name</li> -->
+                    <!-- <li id="currentDate">Date</li> -->
+                    <li id="temp">temperature</li>
+                    <li id="humidity">humidty</li>
+                    <li id="wind">wind speed</li>
                 </ul>
 
             </article>
             <article class="fiveDay">
                 <h3>5 Day Forecast</h3>
-                <ul>
-                    <li>Date</li>
-                    <li>Icon</li>
-                    <li>temperature</li>
-                    <li>humidty</li>
-                    <li>wind speed</li>
+                <!-- <div class="card">
+                    <ul>
+                        <li id="day1">1 Day From Today</li>
+                        <li>Icon</li>
+                        <li>temperature</li>
+                        <li>humidty</li>
+                        <li>wind speed</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <ul>
+                        <li id="day2">2 Days From Today</li>
+                        <li>Icon</li>
+                        <li>temperature</li>
+                        <li>humidty</li>
+                        <li>wind speed</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <ul>
+                        <li id="day3">3 Days From Today</li>
+                        <li>Icon</li>
+                        <li>temperature</li>
+                        <li>humidty</li>
+                        <li>wind speed</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <ul>
+                        <li id="day4">4 Days From Today</li>
+                        <li>Icon</li>
+                        <li>temperature</li>
+                        <li>humidty</li>
+                        <li>wind speed</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <ul>
+                        <li id="day5">5 Days From Today</li>
+                        <li>Icon</li>
+                        <li>temperature</li>
+                        <li>humidty</li>
+                        <li>wind speed</li> -->
                 </ul>
-            </article>
-        </section>
+    </div>
+
+    </article>
+    </section>
 
     </div>
 
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.11.7/dayjs.min.js"></script>
 
 <script src="./assets/js/script.js"></script>
+
 
 </html>
 
@@ -67,3 +120,5 @@
 THEN I am presented with the city name, the date, an icon 
 representation of weather conditions, the temperature, 
 the humidity, and the the wind speed -->
+
+<!-- http://openweathermap.org/img/wn/10d@2x.png -->

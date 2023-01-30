@@ -11,5 +11,31 @@
     justify-content: space-around;
     border: 3px solid black;
     border-radius: 90px;
+    background-color: gray;
 }
 
+.fiveDay {
+    display: flex;
+    flex-direction: row;
+    background-color: hotpink;
+    justify-content: space-evenly;
+    margin: 5px;
+    padding: 5px;
+}
+ul {
+    list-style: none;
+}
+
+.icon-description {
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    text-align: left;
+    border: 1px solid black;
+    margin: 3px;
+    padding: 0px;
+    gap: 1px;
+
+}
