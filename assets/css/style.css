@@ -69,7 +69,6 @@
     margin: 15px;
 }
 .imgClass {
-    border: 10px solid hotpink;
     display: flex;
     justify-content: center;
 }
