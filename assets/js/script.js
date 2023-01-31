@@ -73,7 +73,7 @@ function fiveDayWeather (lat, lon) {
             document.getElementById("day" + (i+8) + "Hum").innerHTML = "Hum: " + Math.floor(data.list[i].main.humidity) + "%";
             document.getElementById("day" + (i+8) + "Description").innerHTML = "Conditions: " + data.list[i].weather[0].description;
             document.getElementById("day" + (i+8) + "Wind").innerHTML = "Wind Speed: " + data.list[i].wind.speed + "MPH";
-            document.getElementById("img" + (i+8)).src = "http://openweathermap.org/img/wn/"+
+            document.getElementById("img" + (i+8)).src = "https://openweathermap.org/img/wn/"+
             data.list[i].weather[0].icon
             +".png";
         }
