@@ -19,7 +19,7 @@ document.getElementById("search-btn").addEventListener("click", function(event) 
 })
 
 function latAndLonData(cityName) {
-    let geoAPI = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}` 
+    let geoAPI = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}` 
     fetch(geoAPI)
     .then(function(response){
         return response.json()
@@ -33,7 +33,7 @@ function latAndLonData(cityName) {
     })}
 
     function currentWather (lat, lon){
-        let weatherAPI = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+        let weatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
         fetch(weatherAPI)
         .then(function(response){
             return response.json();
@@ -60,7 +60,7 @@ function latAndLonData(cityName) {
 fiveDayWeather (lat, lon);
             })}
 function fiveDayWeather (lat, lon) {
-    let weatherAPI = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
+    let weatherAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
     fetch(weatherAPI)
     .then(function(response){
         return response.json()
