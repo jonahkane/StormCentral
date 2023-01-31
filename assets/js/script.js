@@ -47,7 +47,7 @@ function latAndLonData(cityName) {
             let wind = data.wind.speed; 
             let description = data.weather[0].description;
             let icon = data.weather[0].icon;
-            let weatherIcon = "http://openweathermap.org/img/wn/" + icon + ".png";
+            let weatherIcon = "https://openweathermap.org/img/wn/" + icon + ".png";
 
             $('#current-date').text(currentDay.format('dddd, MMMM DD'));
             $('#location').text(location + " ");
