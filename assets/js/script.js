@@ -6,17 +6,19 @@ let cityForm = document.querySelector("#city-form");
 let searchButton = document.querySelector("#search-btn");
 let cityList = document.querySelector('#city-list');
 let cityCountSpan = document.querySelector('#city-count');
+let pastSearchButtonEl = document.querySelector("#past-search-buttons");
 let cities = [];
 
 function DefaultView () {
     document.getElementById("search-btn").defaultValue = "Minneapolis";
     latAndLonData("Minneapolis");
 }
-document.getElementById("search-btn").addEventListener("click", function(event) {
+function userSubmission (event) {
+// document.getElementById("search-btn").addEventListener("click", function(event) {
     event.preventDefault();
     let cityName = document.getElementById("city-text").value;
     latAndLonData(cityName);
-})
+}
 
 function latAndLonData(cityName) {
     let geoAPI = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}` 
@@ -29,10 +31,10 @@ function latAndLonData(cityName) {
 
         let lat = data[0].lat;
         let lon = data[0].lon;
-        currentWather (lat, lon);
+        currentWeather (lat, lon);
     })}
 
-    function currentWather (lat, lon){
+    function currentWeather (lat, lon){
         let weatherAPI = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
         fetch(weatherAPI)
         .then(function(response){
@@ -59,6 +61,7 @@ function latAndLonData(cityName) {
             
 fiveDayWeather (lat, lon);
             })}
+
 function fiveDayWeather (lat, lon) {
     let weatherAPI = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
     fetch(weatherAPI)
@@ -87,10 +90,11 @@ function fiveDayWeather (lat, lon) {
         var days = [day0.format('dddd, MMMM DD'), day1.format('dddd, MMMM DD'), day2.format('dddd, MMMM DD'), day3.format('dddd, MMMM DD'), day4.format('dddd, MMMM DD'), day5.format('dddd, MMMM DD')];
         for(i = 0; i<5; i++){
             document.getElementById("day" + (i+1)).innerHTML = days[i];
+            
         }
     })}
     
-    function renderCities() {
+    function previousSearchCity() {
         cityList.innerHTML = "";
         cityCountSpan.textContent = cities.length;
       
@@ -102,13 +106,35 @@ function fiveDayWeather (lat, lon) {
           li.setAttribute("data-index", i);
       
           let button = document.createElement("button");
+          button.classList.add("#remove");
           button.textContent = "Remove";
       
           li.appendChild(button);
           cityList.appendChild(li);
+
+
+          clickMe = document.createElement("button");
+          clickMe.textContent = city;
+          clickMe.classList = ("past-search");
+          clickMe.setAttribute("data-index", i);
+
+          // clickMe.setAttribute("data-city", cities[i])
+          clickMe.setAttribute("type", "submit");
+          pastSearchButtonEl.append(clickMe);
+          console.log("returning"+ clickMe);
+
+
+          
         }
       }
-      
+      let pastSearchHandler = function(event) {
+        let city = event.target.getAttribute("data-city")
+        if (city) {
+          latAndLonData(city);
+          // currentWeather(city);
+          // fiveDayWeather(city);
+        }
+      }
       function init() {
         let storedCities = JSON.parse(localStorage.getItem("cities"));
       
@@ -116,7 +142,7 @@ function fiveDayWeather (lat, lon) {
           cities = storedCities;
         }
       
-        renderCities();
+        // previousSearchCity();
       }
       
       function storeCities() {
@@ -136,7 +162,7 @@ function fiveDayWeather (lat, lon) {
         cityName.value = "";
       
         storeCities();
-        renderCities();
+        previousSearchCity();
         latAndLonData(cityText);
 
       });
@@ -153,7 +179,7 @@ function fiveDayWeather (lat, lon) {
         cityName.value = "";
       
         storeCities();
-        renderCities();
+        previousSearchCity();
         latAndLonData(cityText);
 
 
@@ -165,9 +191,14 @@ function fiveDayWeather (lat, lon) {
           let index = element.parentElement.getAttribute("data-index");
           cities.splice(index, 1);
           storeCities();
-          renderCities();
+          previousSearchCity();
         }
       });
       
-      init()
+      
+      init();
+
+      // cityForm.addEventListener("submit", formSubmitHandler);
+      document.getElementById("search-btn").addEventListener("click", userSubmission);
+      pastSearchButtonEl.addEventListener("click", pastSearchHandler);
       

@@ -93,3 +93,20 @@ li {
   input {
     width: 100%;
   }
+
+  .past-search, #city-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  button {
+    text-align: left;
+      }
+.past-search button {
+        background-color: blue;
+        color: white;
+        font-size: large;
+        padding: 5px;
+        margin: 5px;
+      }
+  
