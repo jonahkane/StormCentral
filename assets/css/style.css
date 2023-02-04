@@ -1,4 +1,7 @@
-*,
+.card-body {
+    flex: auto;
+}
+/* *,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -94,19 +97,21 @@ li {
     width: 100%;
   }
 
-  .past-search, #city-list {
+  .city-list, #city-list {
     display: flex;
     flex-direction: column;
   }
 
   button {
     text-align: left;
+    cursor: pointer;
+
       }
-.past-search button {
+.city-list button {
         background-color: blue;
         color: white;
         font-size: large;
         padding: 5px;
         margin: 5px;
       }
-  
+   */
