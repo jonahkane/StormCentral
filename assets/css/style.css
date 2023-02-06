@@ -1,6 +1,15 @@
 .card-body {
     flex: auto;
 }
+.main-forecast {
+    display: flex;
+    flex-direction: row;
+}
+.icon {
+    background-color: hotpink;
+    line-height: 1rem;
+}
+
 /* *,
 *::before,
 *::after {
