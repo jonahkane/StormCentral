@@ -1,16 +1,27 @@
+/* did not require much for css code as i utilized bootstrap to do most of my heavy lifting for me*/
+
+
+/* I wanted my main forecast data to be across the top of the page so made it a flex box, flexed it into a row, and the sent the wrap property */
 .main-forecast {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     
 }
+
+/* the weather icon got a bit wonky for sizing depending where i displayed it on the page so i set properties to limit the size */
 img {
     max-height: 50px;
     max-width: 50px;
 }
+/* i wanted to be able to assign an index number to each city in my previous search list, and was planning to get cute with adding a 
+"remove button" but decided against it since this project took me so long.  left the city count span in but it was not necessary for 
+grading purposes so i added a class of hidden, set the display to none so it would not render to the page.  left this feature in as 
+part of the code for future development */
 .hidden {
     display: none;
 }
+/*I wanted the input and search button field to stretch the width of the "sidebar" so set the property to 100%  */
 input, #search-btn {
     width: 100%;
   }
