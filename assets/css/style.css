@@ -1,126 +1,16 @@
-.card-body {
-    flex: auto;
-}
 .main-forecast {
     display: flex;
     flex-direction: row;
-}
-.icon {
-    background-color: hotpink;
-    line-height: 1rem;
-}
-
-/* *,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-.header {
-    background-color: blue;
-    text-align: center;
-    color: white;
-}
-.container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
-}
-#imgClass {
-    text-align: center;
-}
-.right-side {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-}
-.form-control {
-    width: 200px;
-    margin: 10px;
-    padding: 5px;
+    flex-wrap: wrap;
     
-
 }
-.btn {
-    margin: 10px;
-    padding: 5px;
-    height: 30px;
-    width: 200px;
+img {
+    max-height: 50px;
+    max-width: 50px;
 }
-
-.left-side {
-    background-color: aqua;
-    padding: 25px;
-    margin: 25px;
+.hidden {
+    display: none;
 }
-.main-forecast {
-    display: flex;
-    gap: 5px;
-}
-.right-side {
-    background-color: bisque;
-}
-.top {
-    border: 1px solid black;
-}
-
-.bottom {
-    display: flex;
-    flex-direction: row;
-    background-color: gray;
-    justify-content: space-around;
-    border: 1px solid black;
-}
-.card-container {
-    display: flex;
-    flex-direction: row;
-}
-.card {
-    border: 1px solid black;
-    padding: 15px;
-    margin: 15px;
-}
-.imgClass {
-    display: flex;
-    justify-content: center;
-}
-
-
-li {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 5px;
-    background-color: blue;
-    color: white;
-    list-style: none;
-  }
-  li button {
-    float: right;
-    border: none;
-    cursor: pointer;
-    background-color: #ff7034;
-    color: white;
-  }
-  
-  input {
+input, #search-btn {
     width: 100%;
   }
-
-  .city-list, #city-list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  button {
-    text-align: left;
-    cursor: pointer;
-
-      }
-.city-list button {
-        background-color: blue;
-        color: white;
-        font-size: large;
-        padding: 5px;
-        margin: 5px;
-      }
-   */

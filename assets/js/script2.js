@@ -7,7 +7,6 @@ let searchButton = document.querySelector("#search-btn");
 let cityList = document.querySelector('#city-list');
 let cityCountSpan = document.querySelector('#city-count');
 let clickMeEl = document.querySelector("#city-list-buttons");
-let weatherHeader = document.querySelector("#location");
 let cities = [];
 
 
@@ -82,16 +81,14 @@ function latAndLonData(cityName) {
             let weatherIcon = "https://openweathermap.org/img/wn/" + icon + ".png";
             let date = currentDay.format('dddd, MMMM DD')
   
-            // $('#location').text(location + " " + date + " " + description);
-            $('#current-date').text(currentDay.format('dddd, MMMM DD'));
-            $('#location').text(location + " ");
+            $('#current-date').text(" " + currentDay.format('dddd, MMMM DD'));
+            $('#location').text(location + ":");
             $('#weather-conditions').text("Current conditions: " + description);
             document.querySelector("#icon").src = weatherIcon;
             $('#temperature').text("Temperature: " + Math.floor(temp) + degSymbol + "F");
             $('#humidity').text("Humidity: " + humidity + "%");
             $('#wind-speed').text("Wind speed: " + wind + "mph");
             
-            // weatherHeader.appendChild(weatherIcon);
             fiveDayWeather (lat, lon);
   
         })}
